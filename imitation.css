@@ -1,4 +1,7 @@
 /* AI-assisted code starts here — GitHub Copilot; location: centered cover layout. */
+p {
+  margin-block: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -27,7 +30,7 @@ main {
   background-image: url("Images/ImmitationBackground.png");
   background-size: cover;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 3px rgba(0, 0, 1, 0.702);
 }
 
 .cover::before {
@@ -53,8 +56,7 @@ main {
   top: 7%;
   right: 8%;
   left: 9%;
-  text-transform: uppercase;
-  font-family: "Michroma", "Oswald";
+  
 }
 
 .cover-heading h1 {
@@ -62,17 +64,16 @@ main {
   font-size: 52px;
   font-weight: 900;
   line-height: 0.9;
-  "Michroma",
-    "Oswald";
+  font-family: "Michroma", "Oswald";
 }
 
 .cover-subtitle {
-  margin: 0;
-  font-size: 29px;
-  font-weight: 300;
+  margin: 0.8px;
+  font-size: 23px;
+  font-weight: 100;
   line-height: 1;
   white-space: nowrap;
-font-family: "Michroma","Oswald";
+  font-family: "Michroma", "Oswald";
 }
 
 .cover-date {
@@ -85,28 +86,30 @@ font-family: "Michroma","Oswald";
   font-family: "Oswald", "Michroma";
 }
 
-.cover-feature {
+.cover-egear {
   position: absolute;
   top: 28%;
-  left: 9%;
+  left: 20%;
   margin: 0;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 1;
   font-family: "Oswald", "Michroma";
 }
 
-.cover-stories {
+.cover-info {
   position: absolute;
   right: 8%;
   bottom: 6%;
   left: 9%;
-  display: grid;
-  gap: 6px;
-  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 13px;
   font-weight: 800;
   line-height: 1.05;
   font-family: "Oswald", "Michroma";
+  letter-spacing: 1px;
 }
 
 .cover-stories p {
@@ -119,3 +122,16 @@ footer {
 }
 
 /* AI-assisted code ends here. */
+
+.biker { 
+background-image: url("Images/ImmitationLady.png");
+background-size: 97%;
+background-position: center 90px;
+background-repeat: no-repeat;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
