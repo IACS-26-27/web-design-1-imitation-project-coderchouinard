@@ -2,6 +2,7 @@
 p {
   margin-block: 0;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -40,13 +41,13 @@ main {
   width: 81%;
   height: 8px;
   background: repeating-linear-gradient(90deg,
-      #05a9c5 0 5px,
+      #f72b35 0px 5px,
       transparent 5px 9px,
-      #f72b35 9px 14px,
+      green 9px 14px,
       transparent 14px 18px,
-      green 18px 22px,
+      #ffdb28 18px 22px,
       transparent 22px 26px,
-      #ffdb28 26px 30px,
+      #05a9c5 26px 30px,
       transparent 30px 34px);
   content: "";
 }
@@ -56,7 +57,7 @@ main {
   top: 7%;
   right: 8%;
   left: 9%;
-  
+
 }
 
 .cover-heading h1 {
@@ -123,15 +124,39 @@ footer {
 
 /* AI-assisted code ends here. */
 
-.biker { 
-background-image: url("Images/ImmitationLady.png");
-background-size: 97%;
-background-position: center 90px;
-background-repeat: no-repeat;
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
+.biker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  inset: 0;
+  isolation: isolate;
 }
 
+/* AI-generated code starts here — GitHub Copilot */
+
+
+.biker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("Images/ImmitationLady.png");
+  background-size: 97%;
+  background-position: center 90px;
+  background-repeat: no-repeat;
+  animation: biker-ride-in 1.8s ease-out both;
+}
+
+@keyframes biker-ride-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* AI-generated code ends here */
