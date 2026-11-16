@@ -1,55 +1,203 @@
-/* Code for all screen sizes */
-
-/* BEGIN MOBILE RULES */
-@media only screen and (max-width: 767px) {
-  /* Code for mobile phones only: */
-
-  /* Mobile label */
-  main::before {
-    content: "Mobile";
-    background-color: #c8787888;
-  }
-  /* End mobile label */
+/* AI-assisted code starts here — GitHub Copilot
+   Student prompt: "Make the responsive version fill the iframe and put the biker above the stories on phones." */
+* {
+  box-sizing: border-box;
 }
 
-/* BEGIN MEDIUM WIDTH RULES */
-@media only screen and (min-width: 768px) and (max-width: 1399px) {
-  /* Code for medium width and bigger : */
-
-  /* Laptop label */
-  main::before {
-    content: "Laptop";
-    background-color: #45454588;
-  }
-  /* End laptop label */
+p {
+  margin: 0;
 }
 
-/* BEGIN WIDE SCREEN RULES */
-@media only screen and (min-width: 1400px) {
-  /* Code for wide screen only */
-
-  /* Widescreen label */
-  main::before {
-    content: "Wide";
-    background-color: #00438888;
-  }
-  /* End widescreen label */
+html {
+  height: 100%;
 }
 
-/* BACK TO CODE FOR ALL SIZES */
-
-/* Code to insert circular label label to show how responsive code is working on lower right */
-main::before {
-  position: fixed;
-  bottom: 2px;
-  right: 2px;
-  color: #efefef;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-family: Helvetica, sans-serif;
-  font-size: 8pt;
+body {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  background: url("Images/ImmitationBackground.png") center / cover no-repeat;
+background-size: cover;
 }
+
+main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+}
+
+.cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 1, 0.7);
+}
+
+.cover::before {
+  position: absolute;
+  z-index: 2;
+  top: 4%;
+  left: 9.5%;
+  width: 81%;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    #f72b35 0 5px,
+    transparent 5px 9px,
+    green 9px 14px,
+    transparent 14px 18px,
+    #ffdb28 18px 22px,
+    transparent 22px 26px,
+    #05a9c5 26px 30px,
+    transparent 30px 34px
+  );
+  content: "";
+}
+
+.cover-heading {
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  right: 8%;
+  left: 9%;
+}
+
+.cover-heading h1 {
+  margin: 0;
+  font-family: "Michroma", "Oswald", sans-serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.cover-subtitle {
+  margin-top: 4px;
+  font-family: "Michroma", "Oswald", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cover-date {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 33.5%;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.65rem, 1vw, 0.85rem);
+  font-weight: 700;
+}
+
+.biker {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.biker::before {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: url("Images/ImmitationLady.png") center top / contain no-repeat;
+  content: "";
+  animation: biker-ride-in 1.8s ease-out both;
+}
+
+.cover-egear {
+  position: absolute;
+  z-index: 1;
+  top: 28%;
+  left: 9%;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.cover-info {
+  position: absolute;
+  z-index: 1;
+  top: 56%;
+  right: 8%;
+  bottom: 5%;
+  left: 8%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.42);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.75rem, 1.1vw, 1.1rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+@keyframes biker-ride-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .cover-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    top: 54%;
+  }
+}
+
+@media (max-width: 767px) {
+  .biker::before {
+    height: 80%;
+    top: 18%;
+  }
+
+  .cover-egear {
+    top: 18%;
+    right: 78%;
+    left: auto;
+  }
+
+  .cover-info {
+    top: 50%;
+    right: 8%;
+    bottom: 4%;
+    left: 8%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .biker::before {
+    animation: none;
+  }
+}
+
+footer {
+  padding: 12px;
+  text-align: center;
+}
+/* AI-assisted code ends here. */
