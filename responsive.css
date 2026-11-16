@@ -168,12 +168,13 @@ main {
 
 @media (max-width: 767px) {
   .biker::before {
-    height: 46%;
+    height: 80%;
+    top: 18%;
   }
 
   .cover-egear {
-    top: 40%;
-    right: 8%;
+    top: 18%;
+    right: 78%;
     left: auto;
   }
 
