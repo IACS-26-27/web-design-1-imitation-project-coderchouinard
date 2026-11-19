@@ -1,5 +1,5 @@
 /* AI-assisted code starts here — GitHub Copilot
-   Student prompt: "Make the responsive version fill the iframe and put the biker above the stories on phones." */
+   Student prompt summary: Fill the iframe, put the biker above stories on phones, align the date to INTERNATIONAL, and keep eGEAR in the left-side grid flow. */
 * {
   box-sizing: border-box;
 }
@@ -69,6 +69,9 @@ main {
   top: 7%;
   right: 8%;
   left: 9%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
 }
 
 .cover-heading h1 {
@@ -88,11 +91,16 @@ main {
   white-space: nowrap;
 }
 
+.cover-subtitle-date {
+  display: grid;
+  grid-template-columns: max-content;
+  width: max-content;
+  max-width: 100%;
+}
+
 .cover-date {
-  position: absolute;
+  justify-self: end;
   z-index: 1;
-  top: 30%;
-  left: 33.5%;
   font-family: "Oswald", sans-serif;
   font-size: clamp(0.65rem, 1vw, 0.85rem);
   font-weight: 700;
@@ -116,10 +124,9 @@ main {
 }
 
 .cover-egear {
-  position: absolute;
+  position: static;
   z-index: 1;
-  top: 28%;
-  left: 9%;
+  justify-self: start;
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -170,12 +177,6 @@ main {
   .biker::before {
     height: 80%;
     top: 18%;
-  }
-
-  .cover-egear {
-    top: 18%;
-    right: 78%;
-    left: auto;
   }
 
   .cover-info {
